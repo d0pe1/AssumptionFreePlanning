@@ -1,0 +1,23 @@
+{
+  "skill_name": "assumption-free-planning",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "i want to be a cve watchdog for our infra. plan it out for me so my devs can start building",
+      "expected_output": "Asks mandate/decision-authority/current-setup questions first; produces no tech choices; proposes a component outline for confirmation; does not write a full plan in one pass.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We need an internal LLM gateway for our team (~40 devs). Our lab runs Vault and Proxmox, the client allows AWS. Write the PLAN.md with milestones.",
+      "expected_output": "Treats Vault/Proxmox/AWS as facts or permissions, not decisions; asks whether hosting/secrets are mandated and who decides; does not pick hosting or a secrets backend; no PLAN.md with chosen stack before answers.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Here's my roadmap draft for the notification component: we'll use Slack webhooks, page on CVSS >= 9, retain alerts 90 days, 99.9% availability. Review it and finish the remaining components (ingestion, matching, escalation) the same way.",
+      "expected_output": "Flags the undecided numbers/choices in the draft as needing a decider/citation; does not invent the remaining components' tech/numbers; declares assumptions per component with options tables and asks.",
+      "files": []
+    }
+  ]
+}
