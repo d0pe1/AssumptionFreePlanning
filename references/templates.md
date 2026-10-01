@@ -20,9 +20,9 @@ Status: <Phase 0–5> · Review: <GREEN | RED | not yet> · Last updated: <date>
 | Hosting | Decided by <role/name> | <source> |
 
 ## Decisions
-| ID | Decision | Options considered | Decided by | Date |
-|---|---|---|---|---|
-| D-1 | <choice> | <A, B, C> | <name or mandate> | <date> |
+| ID | Decision | Options considered | Decided by | Evidence | Date |
+|---|---|---|---|---|---|
+| D-1 | <choice> | <A, B, C> | <name or mandate> | <verbatim quote / doc link> | <date> |
 
 ## Facts
 | ID | Fact | Source | Status |

@@ -54,6 +54,8 @@ Recommendations, scores, estimates and drafts are allowed only when clearly labe
 
 ### Phase 0: Ground (before writing anything)
 
+**Look before you ask.** Search everything you can already reach: the conversation, the repo, existing docs, memory or notes tools, and emails the user has pasted. Any hint of an outside constraint ("secrets go into X", "client requires Y", someone else's project on Z) is a **candidate mandate**. Never drop one silently. Turn each question below into "here is what I have, with sources; correct it" rather than a blank question. Reacting is faster than recalling. A constraint you found and didn't raise is worse than one you never found.
+
 Ask these before producing any plan text, **one per turn**, in this order. The first turn opens with a short explanation of how you will work, then question 1 alone:
 
 1. **Mandates and prior decisions.** "What is already mandated or decided, by whom? (organisation, client, parent company, security/compliance, existing contracts, platform teams)." This is the most important question in the whole skill. A mandate removes options outright, and missing it invalidates everything built after it. Ask for the source (policy, email, person) so it can be cited.
@@ -62,6 +64,14 @@ Ask these before producing any plan text, **one per turn**, in this order. The f
 4. **Intent and success.** What outcome, for whom, how we'll know it worked, and what is explicitly out of scope.
 
 Record the answers as D-/F- items. Tools you find in the environment are facts about the environment, not decisions about the project.
+
+### Retrofitting an existing plan
+
+If plans, specs or ADRs already exist (written by you, another agent or a person), treat them as **input material, not decisions**. Before Phase 1:
+1. List every spec-level choice in them in one table: the choice, where it appears, and its status. The status is either **sourced** (a human decider or mandate you can cite, with evidence) or **unconfirmed** (an agent default, a draft, a "proposal", a subagent's output).
+2. Show the table and get each "sourced" row confirmed. Rows that are only implied go into "unconfirmed".
+3. The unconfirmed rows become the Phase 2 queue, asked one at a time like any other decision.
+4. Don't edit the existing documents until their choices are decided. Then update them from the ledger, not the other way around.
 
 ### Phase 1: Outline (no technology yet)
 
@@ -105,6 +115,7 @@ Otherwise the verdict is **RED**, with the concrete failing items listed. A plan
 
 ## Rules that are easy to break
 
+- **A lean is not a decision.** "I think it's an X-level problem", "I'd love Y", "probably Z", "up for testing" are preferences or hypotheses. Ask "Record as D-n: X, decided by you?" and only record it after a yes. The decision's evidence is the human's own words (quote them), never your paraphrase.
 - **A recommendation is not a decision.** Neither is a scoring matrix, a "draft" ADR, a subagent's output, or the fact that it is what the user's lab runs. Only a named human or a cited mandate decides.
 - **Never couple a decision to an OPEN item.** "Option A, which requires hosting choice B" quietly decides B. Write it as conditional ("if OPEN-3 resolves to B, then …") or wait.
 - **The user's open questions are not requests for answers.** If they share questions they plan to take to a meeting or a stakeholder, record them as OPEN with that owner. Offer research only if they ask for it.
